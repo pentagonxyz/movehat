@@ -6,7 +6,7 @@ Movehat is a TypeScript SDK for Move on Sui built on top of [Sui's TypeScript SD
 
 1. First, install [our fork of `move-ts`](`https://github.com/pentagonxyz/move-ts`): `cargo install --git https://github.com/pentagonxyz/move-ts/crates/move-tsgen`
 2. Then, install `movehat`: `npm i --save-dev pentagonxyz/movehat`
-3. Then, generate TypeScript files by running `move-tsgen` in a directory containing `Move.toml`.
+3. Then, generate TypeScript files for your project by running `move-tsgen` in a directory containing `Move.toml`.
 
 ## Migration
 
@@ -27,10 +27,10 @@ const moveCallTxn = await signer.executeMoveCall({
 });
 ```
 
-Now, with Movemate, it looks like this:
+Now, with Movehat, it looks like this:
 
 ```
-const devnetNft = Movemate.getModule("devnet_nft", signer);
+const devnetNft = Movehat.getModule("devnet_nft", signer);
 const moveCallTxn = await devnetNft.mint(
   'Example NFT',
   'An NFT created by the wallet Command Line Tool',
@@ -45,7 +45,7 @@ And most importantly, it has type coercion and type annotations in TypeScript!
 ### Get module
 
 ```
-const devnetNft = Movemate.getModule("devnet_nft", signer);
+const devnetNft = Movehat.getModule("devnet_nft", signer);
 ```
 
 ### Make a move call
@@ -69,7 +69,7 @@ await devnetNft.publish(signer);
 Where the first param is the object ID and the second is the recipient:
 
 ```
-await Movemate.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd84058cb73bdeabe123b56632713dcd65e1a6c92', signer);
+await Movehat.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd84058cb73bdeabe123b56632713dcd65e1a6c92', signer);
 ```
 
 ### Split coin
@@ -77,7 +77,7 @@ await Movemate.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd
 Where the first param is the object ID and the second is an array of split amounts:
 
 ```
-await Movemate.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 30], signer);
+await Movehat.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 30], signer);
 ```
 
 ### Merge two coins
@@ -85,5 +85,5 @@ await Movemate.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 
 Where the first param is the primary coin and the second is the coin to merge:
 
 ```
-await Movemate.mergeCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xcc460051569bfb888dedaf5182e76f473ee351af', signer);
+await Movehat.mergeCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xcc460051569bfb888dedaf5182e76f473ee351af', signer);
 ```
