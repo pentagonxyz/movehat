@@ -1,0 +1,25 @@
+{
+  "name": "movehat",
+  "description": "Movehat is a TypeScript SDK for Move on Sui built on top of Sui's TypeScript SDK and Ian Macalinao's `move-ts`.",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/node": "^18.0.6"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pentagonxyz/movehat.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pentagonxyz/movehat/issues"
+  },
+  "homepage": "https://github.com/pentagonxyz/movehat#readme"
+}
