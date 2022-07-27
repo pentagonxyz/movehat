@@ -1,6 +1,6 @@
 # Movehat
 
-Movehat is a TypeScript SDK for Move on Sui built on top of [Sui's TypeScript SDK](https://github.com/MystenLabs/sui/tree/main/sdk/typescript) and [Ian Macalinao's `move-ts`](https://github.com/movingco/move-ts).
+Movehat is a TypeScript SDK for Move on Sui built on top of [Sui's TypeScript SDK](https://github.com/MystenLabs/sui/tree/main/sdk/typescript) and [our fork of Ian Macalinao's `move-ts`](https://github.com/pentagonxyz/move-ts). Movehat aspires to be the [Hardhat](https://hardhat.org/) or [Foundry](https://github.com/foundry-rs/foundry) of Move. Support for Aptos coming soon.
 
 ## Installation
 
@@ -38,7 +38,7 @@ const moveCallTxn = await devnetNft.mint(
 );
 ```
 
-And it has type coercion!
+And most importantly, it has type coercion and type annotations in TypeScript!
 
 ## Usage
 
@@ -61,7 +61,7 @@ const moveCallTxn = await devnetNft.mint(
 ### Publish a package
 
 ```
-await devnetNft.publish();
+await devnetNft.publish(signer);
 ```
 
 ### Transfer an object
@@ -69,7 +69,7 @@ await devnetNft.publish();
 Where the first param is the object ID and the second is the recipient:
 
 ```
-await Movemate.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd84058cb73bdeabe123b56632713dcd65e1a6c92');
+await Movemate.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd84058cb73bdeabe123b56632713dcd65e1a6c92', signer);
 ```
 
 ### Split coin
@@ -77,7 +77,7 @@ await Movemate.transferObject('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xd
 Where the first param is the object ID and the second is an array of split amounts:
 
 ```
-await Movemate.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 30]);
+await Movemate.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 30], signer);
 ```
 
 ### Merge two coins
@@ -85,5 +85,5 @@ await Movemate.splitCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', [10, 20, 
 Where the first param is the primary coin and the second is the coin to merge:
 
 ```
-await Movemate.mergeCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xcc460051569bfb888dedaf5182e76f473ee351af');
+await Movemate.mergeCoin('0x5015b016ab570df14c87649eda918e09e5cc61e0', '0xcc460051569bfb888dedaf5182e76f473ee351af', signer);
 ```
