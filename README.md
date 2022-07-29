@@ -42,6 +42,12 @@ And most importantly, it has type coercion and type annotations in TypeScript!
 
 ## Usage
 
+### Initialization
+
+```
+import { Sui as Movemate } from `pentagonxyz/movemate`;
+```
+
 ### Get module
 
 ```
